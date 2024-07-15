@@ -1,8 +1,6 @@
 selenium
 webdriver-manager
 schedule
-requests
-re
 ischedule
 time
 smtplib
