@@ -62,7 +62,7 @@ def scrape_prices():
 def send_telegram_notification(unterkunfte_number,new_prices, old_prices):
     bot_token = "7386501741:AAH61MTg7oYHpytm0cWQKhksEzjqTzG1lZM"  # Replace with your Telegram bot token
     chat_id = "2027643914"
-    message = f"There are {unterkunfte_number} accomodations under 68€, and the different prices/night found on the webpage are: {new_prices}\nOld prices: {old_prices}"
+    message = f"There are {unterkunfte_number} accomodations under 68€, and the different prices/night found on the webpage are: {new_prices}\n"
 
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
     payload = {
@@ -112,13 +112,13 @@ last_prices = []
 run_count = 0
 
 # Schedule the task to run 10 times per day (every 2.4 hours)
-schedule.every(2.4).hours.do(check_prices)
+#schedule.every(2.4).hours.do(check_prices)
 
 # Run the task immediately
 check_prices()
 
 # Run the scheduler
-while True:
-    schedule.run_pending()
+#while True:
+#    schedule.run_pending()
 
-    time.sleep(1)
+#    time.sleep(1)
